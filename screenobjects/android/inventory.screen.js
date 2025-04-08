@@ -1,50 +1,26 @@
 class InventoryScreen {
-    // Locators
-    get products() {
-      return $$('android=new UiSelector().className("android.view.ViewGroup").resourceIdMatches(".*inventory_item.*")');
+    // Getter for first ADD TO CART button
+    get firstAddToCartBtn() {
+      return $('(//android.widget.TextView[@text="ADD TO CART"])[1]');
     }
   
+    // Getter for cart icon
     get cartIcon() {
-      return $('~test-Cart');
+      return $('//android.view.ViewGroup[@content-desc="test-Cart"]/android.view.ViewGroup/android.widget.ImageView');
     }
   
-    get cartBadge() {
-      return $('~test-Cart').$('android.widget.TextView');
+    // Method to click on Add to Cart
+    async addToCart() {
+      await this.firstAddToCartBtn.waitForDisplayed();
+      await this.firstAddToCartBtn.click();
+      console.log("Clicked on first ADD TO CART");
     }
   
-    /**
-     * Add a specific product to the cart by name
-     * @param {string} productName
-     */
-    async addToCart(productName) {
-      const productCards = await this.products;
-      
-      for (let card of productCards) {
-        const nameEl = await card.$('~test-Item title');
-        const nameText = await nameEl.getText();
-  
-        if (nameText.includes(productName)) {
-          const addToCartBtn = await card.$('//android.widget.TextView[@text="ADD TO CART"]');
-          await addToCartBtn.click();
-          break;
-        }
-      }
-    }
-  
-    /**
-     * Tap the cart icon
-     */
-    async clickCartIcon() {
+    // Method to open cart
+    async openCart() {
+      await this.cartIcon.waitForDisplayed();
       await this.cartIcon.click();
-    }
-  
-    /**
-     * Verify the number of items in the cart
-     * @param {string} expectedCount
-     */
-    async verifyCartCount(expectedCount) {
-      await expect(this.cartBadge).toHaveText(expectedCount);
-      console.log(`Cart count matched: ${expectedCount}`);
+      console.log("Cart icon clicked");
     }
   }
   

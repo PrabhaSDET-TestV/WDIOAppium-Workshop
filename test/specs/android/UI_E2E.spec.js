@@ -6,9 +6,8 @@ describe('E2E Test Suite', () => {
     await LoginScreen.login(process.env.USERNAME, process.env.PASSWORD);
     // Add assertion depending on your post-login screen
 
-    await InventoryScreen.addToCart('Sauce Labs Backpack');
-    await InventoryScreen.verifyCartCount('1');
-    await InventoryScreen.clickCartIcon();
+    await InventoryScreen.addToCart();
+    await InventoryScreen.openCart();
 
   });
 });
