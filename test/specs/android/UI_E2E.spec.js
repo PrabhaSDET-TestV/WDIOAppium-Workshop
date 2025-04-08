@@ -1,4 +1,4 @@
-import LoginScreen from '../../../screenobjects/android/login.screen.js';
+import LoginScreen from '../../../screenobjects/android/login.screen';
 
 describe('E2E Test Suite', () => {
   it('E2E Order Placement for Sauce Labs Backpack', async () => {

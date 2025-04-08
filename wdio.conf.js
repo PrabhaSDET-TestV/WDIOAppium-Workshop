@@ -5,7 +5,7 @@ dotenv.config();
 export const config = {
     runner: 'local',
     specs: [
-        './test/specs/android/*.js'
+        './test/specs/android/UI_E2E.spec.js'
     ],
     exclude: [],
     maxInstances: 10,
