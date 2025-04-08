@@ -1,4 +1,6 @@
 import path from "path";
+import dotenv from 'dotenv';
+dotenv.config();
 
 export const config = {
     runner: 'local',
@@ -18,7 +20,9 @@ export const config = {
         'appium:platformVersion': '16.0',
         'appium:automationName': 'UiAutomator2',
         'appium:app': path.join(process.cwd(), 'app/android/SauceLabs.apk'),
-        'appium:autoGrantPermissions': true
+        "appium:appWaitActivity": "*",
+        "appium:autoGrantPermissions": true,
+        "appium:noReset": true
     }],
 
     logLevel: 'info',
