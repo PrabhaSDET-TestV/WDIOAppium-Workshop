@@ -12,6 +12,23 @@ export const config = {
   port: 4723,
   path: "/wd/hub",
 
+  /**
+   * =============================================
+   * TASK: Parallel Execution of Tests on Multiple Emulators
+   * =============================================
+   * GOAL:
+   * Configure WebdriverIO to run test scripts in parallel
+   * across multiple Android emulators using Appium.
+   *
+   * SOLUTION:
+   * - Defined two capabilities: Pixel_9 (Android 16.0) and Pixel_8 (Android 14.0).
+   * - Set `maxInstances` to 10, allowing multiple sessions to run in parallel.
+   * - With this config, if you have one test script, it will be executed
+   *   concurrently on both Pixel_9 and Pixel_8 emulators.
+   * - WebdriverIO handles this automatically — no manual parallel logic needed.
+   * =============================================
+   */
+
   capabilities: [
     {
       "appium:platformName": "Android",
