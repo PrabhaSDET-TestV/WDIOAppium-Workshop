@@ -20,6 +20,6 @@ describe('E2E Test Suite', () => {
     await CheckoutStepTwoScreen.tapFinish();
 
     const message = await CheckoutStepThreeScreen.getSuccessMessage();
-    expect(message).toEqual('THANK YOU FOR YOU ORDER');
+    await expect(message).toEqual('THANK YOU FOR YOU ORDER');
   });
 });
