@@ -30,16 +30,16 @@ export const config = {
    */
 
   capabilities: [
-    {
-      "appium:platformName": "Android",
-      "appium:deviceName": "Pixel_9",
-      "appium:platformVersion": "16.0",
-      "appium:automationName": "UiAutomator2",
-      "appium:app": path.join(process.cwd(), "app/android/SauceLabs.apk"),
-      "appium:appWaitActivity": "*",
-      "appium:autoGrantPermissions": true,
-      "appium:noReset": true,
-    },
+    // {
+    //   "appium:platformName": "Android",
+    //   "appium:deviceName": "Pixel_9",
+    //   "appium:platformVersion": "16.0",
+    //   "appium:automationName": "UiAutomator2",
+    //   "appium:app": path.join(process.cwd(), "app/android/SauceLabs.apk"),
+    //   "appium:appWaitActivity": "*",
+    //   "appium:autoGrantPermissions": true,
+    //   "appium:noReset": true,
+    // },
     {
       "appium:platformName": "Android",
       "appium:deviceName": "Pixel_8",
