@@ -28,7 +28,7 @@ describe("WebView Navigation and Interaction Test", () => {
     await driver.switchContext("WEBVIEW_com.swaglabsmobileapp");
 
     // Step 7: Interact with elements inside WebView (browser-style selectors)
-    const searchInput = await $('input[name="search"]');
+    const searchInput = await $('#search2');
     await searchInput.setValue("HTML");
 
     const searchButton = await $("#learntocode_searchbtn");
