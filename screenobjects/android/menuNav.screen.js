@@ -18,7 +18,7 @@ const MenuOptions = Object.freeze({
 class MenuNav {
     /** Menu icon on top-left corner */
     get menuIcon() {
-        return $('android=new UiSelector().className("android.widget.ImageView").instance(1)');
+        return $('//android.view.ViewGroup[@content-desc="test-Menu"]/android.view.ViewGroup/android.widget.ImageView');
     }
 
     /** Returns the element for a given menu item based on visible text */
